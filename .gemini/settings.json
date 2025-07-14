@@ -1,0 +1,17 @@
+{
+  "selectedAuthType": "oauth-personal",
+  "preferredEditor": "vscode",
+  "theme": "Default",
+  "checkpointing": true,
+
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ここにあなたのトークン"
+      }
+    }
+  },
+  "ignore": ["node_modules/", ".env", "dist/"]
+}
