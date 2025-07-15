@@ -20,14 +20,14 @@ export const MENU_DATA = [
     description: "パリッと焼き上げた鶏皮の串。香ばしい脂の旨味が口いっぱいに広がります。",
     price: 180,
     category: "焼き串",
-    image: "/images/menu-images/kawa.jpg",
+    image: "/images/menu-images/kawa.jpeg",
   },
   {
     name: "レバー",
     description: "新鮮な鶏レバーを使用。濃厚な味わいととろける食感が特徴の串焼き。",
     price: 180,
     category: "焼き串",
-    image: "/images/menu-images/liver.jpg",
+    image: "/images/menu-images/liver.png",
   },
 
 ];
