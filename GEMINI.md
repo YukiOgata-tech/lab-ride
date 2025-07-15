@@ -1,32 +1,31 @@
-# 焼き鳥居酒屋サイト - Gemini CLI 文脈
+# Yakitori 居酒屋サイト - 全体設計
 
-## プロジェクト概要
-- 場所：新潟市西区の焼き鳥専門居酒屋の公式WEBサイト（焼き鳥専門串達）
-- 技術：Next.js（App Router）、TypeScript、TailwindCSS、shadcn/ui
-- 目的：メニューSEO、予約導線、アクセス案内、Googleマップ埋め込み
+## 技術スタック
+- Next.js (App Router) + JavaScript
+- TailwindCSS + shadcn/ui + sonner
 
-## ページ構成
-- Home：店舗概要・おすすめ串紹介・予約リンク・OGP/構造化データ
-- Menu：串カテゴリ一覧、個別リンク
-- Menu/[slug]：串詳細ページ。JSON-LD MenuItem、タイトル/description生成
-- Reservation：アクセス・地図・電話リンク・営業時間
-- About：店舗のストーリー・スタッフ紹介等
+## カラースキーム@GEMINI.md
+- メインカラー：赤（情熱・食欲を演出）
+- アクセントや背景：黒（高級感・引き締め）
+- ボタン・ヘッダー・リンクなど主要UIは赤、背景やテキストは黒ベース
 
-## UX & SEOルール
-- 各ページに `metadata`（title, description, openGraph）
-- 各画像は `alt` 属性必須
-- JSON-LD: LocalBusiness, MenuItem, GeoCoordinates を各ページに反映
-- Tailwind＋shadcn/ui でUIを構築
-- サイトマップ、robots.txt は next-sitemap にて生成
-- 画像は next/image を利用、遅延読み込み + WebP生成
+## メニュー管理機能
+- 管理画面で「串名、説明、価格、画像、カテゴリ」を追加・編集・削除
+- データは初期はローカルのオブジェクト（配列・JSONファイルなど）使用
+- API RoutesでCRUD実装（JavaScript）
 
-## 開発規約
-- ESLint + Prettier でコード整形
-- Named export を基本とし、一貫性を重視
-- ファイル名は kebab-case、ディレクトリ構成は pages/appごとに分割
+## UI要件
+- package.json/`components/ui` にある shadcn/ui は全て活用
+- 通知は sonner コンポーネントで成功・失敗時に表示
+- レスポンシブ対応（モバイル・デスクトップ両方OK）
+- デザインに赤と黒のカラーパレットを反映
 
-## CI連携想定
-- `npm run dev` → 開発確認
-- `npm run build && npm run dev` → 完全生成後チェック
-- GitHub PR に /stats や /memory を活用し自動レビュー
-- next-sitemap 実行を postbuild スクリプトに追加
+## SEO・運用
+- 各ページに metadata／OGP／JSON-LD をテンプレートとして設定
+- `.env.example` / `README.md` / Vercel設定ファイルも自動生成
+- Vercelデプロイを想定し、`vercel.app` サブドメイン対応
+
+## 将来対応
+- 将来的に Supabase(Postgres)などのDBへ容易に切り替えできる構造
+- 認証機能（簡易）も管理画面だけに追加可能
+
