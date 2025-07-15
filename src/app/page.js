@@ -78,7 +78,7 @@ export default function HomePage() {
 
       <section className="text-center bg-primary/10 rounded-lg py-12 md:py-16 border-2 border-primary/30">
         <h2 className={`${notoSerifJp.className} text-3xl md:text-4xl font-bold text-primary mb-4`}>ご予約・お問い合わせ</h2>
-        <p className="text-lg text-white/90 mb-8">お電話または、各種グルメサイトからご予約いただけます。</p>
+        <p className="text-lg text-white/90 mb-8">お電話または、各種グルメサイトからご予約いただけます。お持ち帰りもご利用いただけます。</p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg">
           <a href="tel:025-211-4320">電話で予約する : 025-211-4320</a>
